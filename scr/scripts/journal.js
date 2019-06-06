@@ -7,20 +7,60 @@
     Define the keys and value for a JavaScript object that
     represents a journal entry about what you learned today
 */
-const JournalEntry = [{
-    date: "June 4, 2019", 
+const journalEntries = [
+  {
+    date: "June 4, 2019",
     conceptsCovered: "objects and using the Dom",
-    longFormContent: " Well this is an example ", 
-    mood:["happy","sad","Ok"]
-},]
+    longFormContent: " Well this is an example ",
+    mood: ["happy", "sad", "Ok"]
+  },
 
- const entry1 = {
-    date: "June 4, 2019", 
+  {
+    date: "June 4, 2019",
     conceptsCovered: "objects and using the Dom",
-    longFormContent: " Well this is an example ", 
-    mood:["happy","sad","Ok"]
+    longFormContent: " Well this is an example ",
+    mood: ["happy", "sad", "Ok"]
+  }
+];
+
+
+/*
+    Purpose: To create, and return, a string template that
+    represents a single journal entry object as HTML
+
+    Arguments: journalEntry (object)
+*/
+const makeJournalEntryComponent = (
+  date,
+  conceptsCovered,
+  longFormContent,
+  mood
+) => {
+  // Create your own HTML structure for a journal entry
+  return ` 
+    <p>
+    ${date} we learned about ${conceptsCovered} and
+    other notes include ${longFormContent} and I was feeling ${mood}
+    <p/>   `;
+};
+
+/*
+    Purpose: To render all journal entries to the DOM
+
+    Arguments: entries (array of objects)
+*/
+let entryContainer = document.querySelector(".entryLog");
+
+
+for (let i = 0; i < journalEntries.length; i++) {
+  entryContainer.innerHTML += makeJournalEntryComponent(
+    journalEntries[i].date,
+    journalEntries[i].entryContainer,
+    journalEntries[i].longFormContent,
+    journalEntries[i].mood
+  );
 }
 
-JournalEntry.push(entry1);
 
-console.log(JournalEntry);
+
+
