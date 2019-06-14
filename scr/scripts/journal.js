@@ -1,26 +1,32 @@
-// Date of the journal entry.
-// Concepts covered (which will be the title of the entry).
-// The long-form contents of the journal entry.
-// The mood of the journal entry.
+const renderJournalEntries = (entries) => {
+  let selectDOM = document.querySelector(".entryLog")
+  // select the DOM and add the create Journal 
+  selectDOM.innerHTML += createJournalEntry(entries)
+};
 
-/*
-    Define the keys and value for a JavaScript object that
-    represents a journal entry about what you learned today
-*/
-const JournalEntry = [{
-    date: "June 4, 2019", 
-    conceptsCovered: "objects and using the Dom",
-    longFormContent: " Well this is an example ", 
-    mood:["happy","sad","Ok"]
-},]
+// create the HTML that will go into the DOM 
 
- const entry1 = {
-    date: "June 4, 2019", 
-    conceptsCovered: "objects and using the Dom",
-    longFormContent: " Well this is an example ", 
-    mood:["happy","sad","Ok"]
+const createJournalEntry = (taco)=> { 
+  return `
+<h2> ${taco.concept} </h2> 
+<section> 
+     <article>  
+         <p> ${taco.entry} ${taco.mood}  ${taco.date} </p>
+      </article> 
+</section>    `
+
 }
 
-JournalEntry.push(entry1);
+fetch(`http://localhost:3000/entries`) // Fetch from the API
+.then(response => response.json())  // Parse as JSON
+.then(entries => {
+    console.log(entries)
+    // looping through json elements
+    entries.forEach((journalEntry) => {
+        console.log(journalEntry)
+        //sending one object to the funtion
+        renderJournalEntries(journalEntry) 
+    })
+})
 
-console.log(JournalEntry);
+
