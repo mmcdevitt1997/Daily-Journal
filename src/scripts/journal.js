@@ -1,34 +1,40 @@
-// const renderJournalEntries = (entries) => {
-//   let selectDOM = document.querySelector(".entryLog")
-//   // select the DOM and add the create Journal 
-//   selectDOM.innerHTML += createJournalEntry(entries)
-// };
+function eventListener() {
+    document.querySelector("#saveBtn").addEventListener("click", function () {
+        let journalDateValue = document.querySelector("#journalDate").value
+        let conceptsCoveredValue = document.querySelector("#conceptsCovered").value
+        let journalEntryValue = document.querySelector("#journalEntry").value
+        let moodOfDayID = document.getElementById("moodForTheDay")
+        let valueMood = moodOfDayID.options[moodOfDayID.selectedIndex].text
+        if (journalDateValue == "" || conceptsCoveredValue == "" || journalEntryValue == "") {
+            alert("you need to fill out a field")
+        }
+        const newJournalEntry = journalFactory(journalDateValue, conceptsCoveredValue, journalEntryValue, valueMood)
+        postNewJournal(newJournalEntry)
+    })
+}
 
-// create the HTML that will go into the DOM 
+function journalFactory(date, concepts, entry, mood) {
+    return {
+        date: date,
+        concept: concepts,
+        entry: entry,
+        mood: mood
+    }
+}
 
-// const createJournalEntry = (taco)=> { 
-//   return `
-// <h2> ${taco.concept} </h2> 
-// <section> 
-//      <article>  
-//          <p> ${taco.entry} ${taco.mood}  ${taco.date} </p>
-//       </article> 
-// </section>    `
 
-// }
 
-// fetch(`http://localhost:3000/entries`) // Fetch from the API
-// .then(response => response.json())  // Parse as JSON
-// .then(entries => {
-//     console.log(entries)
-//     // looping through json elements
-//     entries.forEach((journalEntry) => {
-//         console.log(journalEntry)
-//         //sending one object to the funtion
-//         renderJournalEntries(journalEntry) 
-//     })
-// })
+// Use `fetch` with the POST method to add your entry to your API
 
+function postNewJournal(newJournalEntry) {
+    return fetch("http://localhost:8088/entries", { // Replace "url" with your API's URL
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newJournalEntry)
+    })
+}
 
 /*
     Main application logic that uses the functions and objects
@@ -38,3 +44,4 @@
     to get the data and display it.
 */
 API.getJournalEntries().then(renderJournalEntries)
+eventListener()
