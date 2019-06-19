@@ -1,17 +1,46 @@
 {
-  "entries" :[
-       {
-         "date": "June 4, 2019",
-         "concept": "objects and using the Dom",
-         "entry": " Well this is an example ",
-         "mood": "happy"
-       },
-     
-       {
-         "date": "June 4, 2019",
-         "concept": "objects and using the Dom",
-         "entry": " Well this is an example ",
-         "mood": "happy"
-       }
-     ]
+  "entries": [
+    {
+      "id": 1,
+      "date": "June 4, 2019",
+      "concept": "objects and using the Dom",
+      "entry": " Well this is an example ",
+      "mood": "happy"
+    },
+    {
+      "id": 2,
+      "date": "June 4, 2019",
+      "concept": "objects and using the Dom",
+      "entry": " Well this is an example ",
+      "mood": "happy"
+    },
+    {
+      "journalDate": "2019-06-19",
+      "conceptsCovered": "egwa",
+      "journalEntry": "aegr",
+      "mood": "Happy",
+      "id": 3
+    },
+    {
+      "journalDate": "",
+      "conceptsCovered": "aegw",
+      "journalEntry": "awef",
+      "mood": "Sad",
+      "id": 4
+    },
+    {
+      "date": "2019-06-04",
+      "concept": "API",
+      "entry": "dfsjkelkawe,f",
+      "mood": "Ok",
+      "id": 5
+    },
+    {
+      "date": "2019-06-19",
+      "concept": "test ",
+      "entry": "test",
+      "mood": "Ok",
+      "id": 6
+    }
+  ]
 }
