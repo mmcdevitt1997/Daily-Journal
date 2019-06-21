@@ -1,5 +1,5 @@
 import { postNewJournal, getData } from "./data.js";
-import { selectDOM, renderJournalEntries } from "./entriesDOM.js"
+import { selectDOM, listJournal } from "./entriesDOM.js"
 
 
 
@@ -25,7 +25,7 @@ function eventListener() {
       .then(dataJS => {
         selectDOM.innerHTML = ""
         getData()
-          .then(journal => renderJournalEntries(journal))
+          .then(journal => listJournal(journal))
 
       })
   })

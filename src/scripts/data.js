@@ -1,5 +1,5 @@
 
- function getData () {
+ function getData() {
         return fetch("http://localhost:8088/entries")
             .then(response => response.json())
     }
