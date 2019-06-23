@@ -4,6 +4,7 @@
             .then(response => response.json())
     }
 
+    // delete the journal entry json data 
     function deleteJournal(id) {
         return fetch(`http://localhost:8088/entries/${id}`, {
           method: "DELETE",
@@ -23,4 +24,16 @@ function postNewJournal(newJournalEntry) {
         body: JSON.stringify(newJournalEntry)
     })
   }
-export{getData, postNewJournal, deleteJournal}
+
+// Used to update the journals 
+function updateJournal(updatedJournal) {
+  return fetch(`http://localhost:8088/entries${updateJournal.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(updateJournal)
+  })
+}
+
+export{getData, postNewJournal, deleteJournal, updateJournal}
