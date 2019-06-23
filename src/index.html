@@ -9,8 +9,8 @@
 </head>
 <body>
     <h1>Daily Journal</h1>
-    <form action="">
-        <fieldset>
+    <form action="" class="fieldset">
+        <fieldset >
         <label for="journalDate">Date of entry:</label>
         <input type="date" name="journalDate" id="journalDate" required>
     </fieldset>
@@ -30,7 +30,19 @@
                 <option value=3>Happy</option>
               </select>
      </fieldset>
-     <button id= "saveBtn" type="button">Record Journal Entry</button>
+    </form>
+   <button id= "saveBtn" type="button">Record Journal Entry</button>
+    <h2>Filter Journal Entries</h2>
+    <form id = "loopTest">
+    <fieldset> 
+        <label for="sadRadio">Sad</label>
+        <input class ="radio"id = "sadRadio" type="radio" name="mood" value=sadR 
+        <label for="sadRadio">Ok</label>
+        <input class ="radio" type="radio" name="mood" value=ok id="okRadio">
+        <label for="happyRadio">Happy</label>
+        <input class ="radio" type="radio" name="mood" value=happy id="happyRadio" >
+        
+    </fieldset>
     </form>
     <article class="entryLog"></article>
 

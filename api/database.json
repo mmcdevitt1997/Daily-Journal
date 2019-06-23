@@ -1,95 +1,11 @@
 {
   "entries": [
     {
-      "date": "2019-06-19",
-      "concept": "test",
+      "date": "2019-06-23",
+      "concept": "atew",
       "entry": "test",
-      "mood": "Sad",
-      "id": 3
-    },
-    {
-      "date": "2019-06-19",
-      "concept": "test",
-      "entry": "test",
-      "mood": "Sad",
-      "id": 4
-    },
-    {
-      "date": "2019-06-19",
-      "concept": "test",
-      "entry": "test",
-      "mood": "Sad",
-      "id": 5
-    },
-    {
-      "date": "2019-06-19",
-      "concept": "test",
-      "entry": "test",
-      "mood": "Sad",
-      "id": 6
-    },
-    {
-      "date": "2019-06-19",
-      "concept": "test",
-      "entry": "test",
-      "mood": "Sad",
-      "id": 7
-    },
-    {
-      "date": "2019-06-19",
-      "concept": "sad",
-      "entry": "sad",
-      "mood": "Sad",
-      "id": 8
-    },
-    {
-      "date": "2019-06-19",
-      "concept": "qrwq",
-      "entry": "asgeaw",
-      "mood": "Sad",
-      "id": 9
-    },
-    {
-      "date": "",
-      "concept": "ewag",
-      "entry": "agwe",
-      "mood": "Sad",
-      "id": 10
-    },
-    {
-      "date": "2019-06-21",
-      "concept": "ewag",
-      "entry": "agwe",
-      "mood": "Happy",
-      "id": 11
-    },
-    {
-      "date": "2019-06-21",
-      "concept": "ewag",
-      "entry": "agwe",
-      "mood": "Happy",
-      "id": 12
-    },
-    {
-      "date": "2019-06-21",
-      "concept": "ewag",
-      "entry": "agwe",
-      "mood": "Happy",
-      "id": 13
-    },
-    {
-      "date": "2019-06-21",
-      "concept": "ewag",
-      "entry": "agwe",
-      "mood": "Happy",
-      "id": 14
-    },
-    {
-      "date": "2019-06-19",
-      "concept": "lkm",
-      "entry": "lkk",
       "mood": "Ok",
-      "id": 15
+      "id": 1
     }
   ]
 }
