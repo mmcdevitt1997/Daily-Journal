@@ -1,4 +1,4 @@
-fieldset {
+.fieldset {
     display: flex; 
     flex-direction: column;
 }
