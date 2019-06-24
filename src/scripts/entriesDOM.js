@@ -78,7 +78,7 @@ function createEditForm(journal) {
     }>
 <textarea name="journalEntry" id="entryEdit" cols="40" rows="4" value= ${
     journal.entry
-    }> ></textarea>
+    }></textarea>
 <select id = "moodEdit">
                 <option value=1>Sad</option>
                 <option value=2>Ok</option>
