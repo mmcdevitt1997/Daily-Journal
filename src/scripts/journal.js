@@ -3,5 +3,5 @@ import{listJournal} from "./entriesDOM.js"
 import{eventListener} from "./entryComponent.js"
 
 getData()
-.then ((journal) => listJournal(journal))
+.then (journal => listJournal(journal))
 eventListener()
