@@ -1,5 +1,6 @@
 import { postNewJournal, getData } from "./data.js";
-import { selectDOM, listJournal } from "./entriesDOM.js"
+import { listJournal } from "./entriesDOM.js"
+import { selectDOM } from "./helper.js"
 
 
 
@@ -21,15 +22,15 @@ function eventListener() {
     // Input journal from the buttons 
     let newJournalEntry = journalFactory(journalDateValue, conceptsCoveredValue, journalEntryValue, valueMood)
     postNewJournal(newJournalEntry)
-      .then(data => data.json())
-      .then(dataJS => {
-        selectDOM.innerHTML = ""
-        getData()
-          .then(journal => listJournal(journal))
-
+    getData()
+    selectDOM.innerHTML = ""
+    getData()
+    .then (journal => listJournal(journal))
       })
-  })
-}
+  }
+
+
+
 
 
 
@@ -44,5 +45,5 @@ function journalFactory(date, concepts, entry, mood) {
 }
 
 
-export { eventListener }
+export { eventListener, journalFactory }
 

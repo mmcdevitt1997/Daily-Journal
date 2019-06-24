@@ -1,7 +1,7 @@
 
- function getData() {
-        return fetch("http://localhost:8088/entries")
-            .then(response => response.json())
+  function getData() {
+       return fetch("http://localhost:8088/entries")
+       .then(journalData => journalData.json())
     }
 
     // delete the journal entry json data 
@@ -27,7 +27,7 @@ function postNewJournal(newJournalEntry) {
 
 // Used to update the journals 
 function updateJournal(updatedJournal) {
-  return fetch(`http://localhost:8088/entries${updateJournal.id}`, {
+  return fetch(`http://localhost:8088/entries/${updatedJournal.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
@@ -35,5 +35,6 @@ function updateJournal(updatedJournal) {
     body: JSON.stringify(updateJournal)
   })
 }
+
 
 export{getData, postNewJournal, deleteJournal, updateJournal}
