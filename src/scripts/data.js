@@ -32,7 +32,7 @@ function updateJournal(updatedJournal) {
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(updateJournal)
+    body: JSON.stringify(updatedJournal)
   })
 }
 
