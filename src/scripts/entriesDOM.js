@@ -18,7 +18,7 @@ function addEditFormDOM(editContainer, editForm) {
     updatedJournal.id = journalID;
     console.log(updatedJournal)
     updateJournal(updatedJournal)
-      .then( () => {
+      .then(() => {
         selectDOM.innerHTML = ""
         getData()
           .then(journal => listJournal(journal))
@@ -97,17 +97,42 @@ function listJournal(journalArr) {
 
 }
 
-// // Adding the filtering to the radio buttons
-// document.getElementsByName("mood").forEach(event => {
-//   event.addEventListener("click", event => {
-//     const radioMood = event.target.value;
-//     console.log(radioMood);
-//     getData().then(entries => {
-//       let moodInput = entries.filter(entry => entry.mood === radioMood);
-//       console.log(moodInput);
-//       listJournal(moodInput);
-//     });
-//   });
-// });
+// Adding the filtering to the radio buttons
+document.getElementsByName("mood").forEach(event => {
+  event.addEventListener("click", event => {
+    const radioMood = event.target.value;
+    console.log(radioMood);
+    getData().then(entries => {
+      let moodInput = entries.filter(entry => entry.mood === radioMood);
+      console.log(moodInput);
+      listJournal(moodInput);
+    });
+  });
+});
+
+
+
+document.querySelector("#searchJournal").addEventListener("keypress", (event) => {
+  if (event.keycode === 13) {
+    const searchTerm = event.target.value
+    getData()
+      .then(journalEntry => {
+        const matchingEntries = []
+        journalEntry.forEach(entry => {
+          let match = false
+          for (const prop of Object.values(entry)) {
+            if (!match && typeof prop === "string" && prop.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+              match = true
+              matchingEntries.push(entry)
+
+      
+            }
+          }
+      })
+      event.target.value = ""
+      listJournal(matchingEntries)
+  })
+}
+})
 
 export { createJournalEntry, listJournal };
