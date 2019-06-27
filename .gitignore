@@ -1,4 +1,7 @@
 .vscode
 .DS_Store
 api/
-api/database.json
+database.json
+package-lock.json
+node_modules/
+dist/

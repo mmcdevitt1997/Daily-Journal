@@ -14,7 +14,7 @@ function eventListener() {
     let journalEntryValue = document.querySelector("#journalEntry").value
     let moodOfDayID = document.getElementById("moodForTheDay")
     let valueMood = moodOfDayID.options[moodOfDayID.selectedIndex].text
-    if (journalDateValue == "" || conceptsCoveredValue == "" || journalEntryValue == "") {
+    if (journalDateValue === "" || conceptsCoveredValue === "" || journalEntryValue === "") {
       alert("you need to fill out a field")
     }
     // Input journal from the buttons
