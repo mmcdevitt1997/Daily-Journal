@@ -25,23 +25,26 @@
      <fieldset>
          <label for="moodForTheDay"> Mood for the day:</label>
          <select id = "moodForTheDay">
-                <option value=1>Sad</option>
-                <option value=2>Ok</option>
-                <option value=3>Happy</option>
+                <option value="Sad">Sad</option>
+                <option value="Ok">Ok</option>
+                <option value="Happy">Happy</option>
               </select>
      </fieldset>
     </form> 
    <button id= "saveBtn" type="button">Record Journal Entry</button>
-    <h2>Filter Journal Entries</h2>
     <form id = "loopTest">
     <fieldset> 
+            <label for = "searchJournal">Filter Journal</label>
         <label for="sadRadio">Sad</label>
-        <input class ="radio"id = "sadRadio" type="radio" name="mood" value=sadR 
+        <input class ="radio"id = "sadRadio" type="radio" name="mood" value="Sad"
         <label for="sadRadio">Ok</label>
-        <input class ="radio" type="radio" name="mood" value=ok id="okRadio">
+        <input class ="radio" type="radio" name="mood" value="Ok" id="okRadio">
         <label for="happyRadio">Happy</label>
-        <input class ="radio" type="radio" name="mood" value=happy id="happyRadio" >
-        
+        <input class ="radio" type="radio" name="mood" value="Happy" id="happyRadio" >
+    </fieldset>
+    <fieldset> 
+        <label for = "searchJournal">Search Journal</label>
+        <input type="text" name = "searchJournal" id="searchJournal">
     </fieldset>
    </form> 
     <article class="entryLog"></article>
